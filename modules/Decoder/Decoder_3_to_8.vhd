@@ -15,18 +15,23 @@ architecture Behavioral of Decoder_3_to_8 is
                Y  : out STD_LOGIC_VECTOR(3 downto 0));
     end component;
 
+    signal EN0 : STD_LOGIC;
+    signal EN1 : STD_LOGIC;
 begin
 
+    EN0 <= EN and (not I(2));
+    EN1 <= EN and I(2);
+    
     D0 : Decoder_2_to_4
         port map(
             I  => I(1 downto 0),
-            EN => EN and (not I(2)),
+            EN => EN0,
             Y  => Y(3 downto 0));
 
     D1 : Decoder_2_to_4
         port map(
             I  => I(1 downto 0),
-            EN => EN and I(2),
+            EN => EN1,
             Y  => Y(7 downto 4));
 
 end Behavioral;
