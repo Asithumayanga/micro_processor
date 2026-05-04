@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: CSE
--- Engineer: Oshan Vithanage
--- 
--- Create Date: 17.02.2026 14:18:32
--- Design Name: Ripple Carry Adder
--- Module Name: FA - Behavioral
--- Project Name: : Lab 3
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -41,7 +20,7 @@ component HA
 end component;
 
 SIGNAL HA0_S, HA0_C : std_logic;
-SIGNAL HA1_S, HA1_C : std_logic;
+SIGNAL HA1_C : std_logic;
 
 begin
 HA_0 : HA   
@@ -55,9 +34,9 @@ HA_1 : HA
     port map (   
     A => HA0_S,   
     B => C_in,   
-    S => HA1_S,   
+    S => S,   
     C => HA1_C);  
 
     C_out <= HA0_C OR HA1_C;
-    S <= HA1_S;
+
 end Behavioral;
