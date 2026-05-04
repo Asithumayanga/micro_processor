@@ -9,8 +9,8 @@ end PC_Inc;
 architecture Behavioral of PC_Inc is
 
 begin
-D(0) <= NOT Q(0);
-D(1) <= Q(0) XOR Q(1);
-D(2) <= ((Q(2)) AND ((NOT Q(0)) OR (NOT Q(1)))) OR ((Q(0)) AND (Q(1)) AND (NOT Q(2)));
+    D(0) <= NOT Q(0);
+    D(1) <= Q(0) XOR Q(1);
+    D(2) <= ((Q(2)) AND ((NOT Q(0)) OR (NOT Q(1)))) OR ((Q(0)) AND (Q(1)) AND (NOT Q(2)));
 
 end Behavioral;
