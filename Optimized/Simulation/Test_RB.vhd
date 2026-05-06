@@ -8,7 +8,7 @@ end Test_RB;
 architecture Behavioral of Test_RB is
 
 
-    component Register_Bank
+    component Reg_Bank
         Port (
             RegEn   : in  STD_LOGIC_VECTOR(2 downto 0);
             Data    : in  STD_LOGIC_VECTOR(3 downto 0);
@@ -33,7 +33,7 @@ architecture Behavioral of Test_RB is
 begin
 
     -- Instantiate the Unit Under Test (UUT)
-    UUT: Register_Bank
+    UUT: Reg
         port map (
             RegEn => RegEn,
             Data  => Data,
