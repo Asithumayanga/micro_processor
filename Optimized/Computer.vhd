@@ -15,7 +15,7 @@ architecture Behavioral of Computer is
 
 Component Slow_Clk is
     generic (
-        N : INTEGER := 26  
+        N : INTEGER := 26
     );
     Port (
         Clk_in  : in  STD_LOGIC;
