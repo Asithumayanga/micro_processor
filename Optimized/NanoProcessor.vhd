@@ -27,7 +27,7 @@ Component Instruction_Decoder is
     );
 end Component;
 
-Component MUX8 is
+Component MUX_8_to_1 is
     Port (
         Sel : in STD_LOGIC_VECTOR(2 downto 0);                    
         I0 : in STD_LOGIC_VECTOR(3 downto 0);   
@@ -42,7 +42,7 @@ Component MUX8 is
     );
 end Component;
     
-Component MUX2 is
+Component MUX_2_to_1 is
         port(
             Sel : in std_logic;                                
             A : in std_logic_vector(2 downto 0);             
@@ -51,7 +51,7 @@ Component MUX2 is
         );
  end Component;
  
-Component Load_Selector is
+Component MUX_2_to_1_4bit is
         Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
                B : in STD_LOGIC_VECTOR (3 downto 0);
                Sel : in STD_LOGIC;
@@ -69,7 +69,7 @@ Component Program_ROM is
          ); 
 end Component;
 
-Component Register_PC is
+Component Reg_PC is
    Port ( 
             Clk : in STD_LOGIC;                      
             Res : in STD_LOGIC;                     
@@ -87,7 +87,7 @@ Component AU is
            Zero : out STD_LOGIC);
 end Component;
 
-Component Register_Bank is
+Component Reg_Bank is
 PORT (
     RegEn : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     Data : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -133,7 +133,7 @@ END Component;
     
 begin
 
-Program_Counter : Register_PC
+Program_Counter : Reg_PC
 Port Map ( 
     Clk => Clk,                    
     Res => Reset,                                          
@@ -147,7 +147,7 @@ Incrementer : PC_Inc
     D => Next_Address
 );
 
-Next_Address_Selector : MUX2
+Next_Address_Selector : MUX_2_to_1
 Port Map ( 
     Sel => Jump_Flag,                       
       A => Next_Address,          
@@ -169,7 +169,7 @@ InstructionDecoder : Instruction_Decoder
         JumpAddress => Jump_Address
     );
     
-LoadSelector : Load_Selector 
+LoadSelector : MUX_2_to_1_4bit
      Port Map ( 
        A => Operation_Result,
        B => Immediate_Value,
@@ -178,7 +178,7 @@ LoadSelector : Load_Selector
      );
                    
                    
-RegisterBank : Register_Bank 
+RegisterBank : Reg_Bank 
     Port Map (
         RegEn => Register_Enable,
         Data => Selected_Load,
@@ -194,7 +194,7 @@ RegisterBank : Register_Bank
         Reg7 => t7
     );
     
- Selector_A : MUX8
+ Selector_A : MUX_8_to_1
       Port Map (
         Sel => ASelect,                   
         I0 => t0,
@@ -208,7 +208,7 @@ RegisterBank : Register_Bank
         O => AData
       );
 
- Selector_B : MUX8
+ Selector_B : MUX_8_to_1
       Port Map (
         Sel => BSelect,                   
         I0 => t0,
