@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Slow_Clk is
     generic (
-        N : INTEGER := 26 
+        N : INTEGER := 26
     );
     Port (
         Clk_in  : in  STD_LOGIC;
@@ -14,7 +14,7 @@ end Slow_Clk;
 
 architecture Behavioral of Slow_Clk is
 
-    signal counter : unsigned(26 downto 0) := (others => '0');  -- 27-bit binary counter
+    signal counter : unsigned(N downto 0) := (others => '0');  -- 27-bit binary counter
 
 begin
     process(Clk_in)
