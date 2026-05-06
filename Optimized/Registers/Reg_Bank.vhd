@@ -20,7 +20,7 @@ END Reg_Bank;
 
 ARCHITECTURE Behavioral OF Reg_Bank IS
 
-    COMPONENT Register_4bit
+    COMPONENT Reg_4bit
     PORT (
         Clk   : IN  STD_LOGIC;
         Res   : IN STD_LOGIC;
@@ -47,7 +47,7 @@ BEGIN
         O   => Reg_Sel
     );
 
-    reg_0 : Register_4bit
+    reg_0 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -56,7 +56,7 @@ BEGIN
             Q     => Reg0
         );
 
-    reg_1 : Register_4bit
+    reg_1 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -65,7 +65,7 @@ BEGIN
             Q     => Reg1
         );
 
-    reg_2 : Register_4bit
+    reg_2 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -74,7 +74,7 @@ BEGIN
             Q     => Reg2
         );
 
-    reg_3 : Register_4bit
+    reg_3 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -83,7 +83,7 @@ BEGIN
             Q     => Reg3
         );
 
-    reg_4 : Register_4bit
+    reg_4 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -92,7 +92,7 @@ BEGIN
             Q     => Reg4
         );
 
-    reg_5 : Register_4bit
+    reg_5 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -101,7 +101,7 @@ BEGIN
             Q     => Reg5
         );
 
-    reg_6 : Register_4bit
+    reg_6 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
@@ -110,7 +110,7 @@ BEGIN
             Q     => Reg6
         );
 
-    reg_7 : Register_4bit
+    reg_7 : Reg_4bit
         PORT MAP (
             Clk   => Clk,
             Res   => Res,
