@@ -7,7 +7,7 @@ end PC_Test;
 architecture Behavioral of PC_Test is
 
     -- Component declaration for Register_PC
-    component Register_PC is
+    component Reg_PC is
         Port ( 
             Clk  : in  STD_LOGIC;
             Res  : in  STD_LOGIC;
@@ -34,7 +34,7 @@ architecture Behavioral of PC_Test is
 begin
 
     -- Instantiate Register_PC
-    Reg : Register_PC
+    Reg : Reg_PC
         port map (
             Clk => Clk,
             D   => Inc_D,
