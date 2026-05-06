@@ -25,7 +25,7 @@ architecture Behavioral of AU is
 
 begin
 
-    RCA : RCA_4
+    RCA : adder_4bit
         port map (
             A => A,
             B => Tmp_B,
