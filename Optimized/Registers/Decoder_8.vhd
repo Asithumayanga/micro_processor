@@ -6,7 +6,7 @@ entity Decoder_8 is
         Sel : in  STD_LOGIC_VECTOR(2 downto 0);
         O   : out STD_LOGIC_VECTOR(7 downto 0)
     );
-end Decoder_3_to_8;
+end Decoder_8;
 
 architecture Behavioral of Decoder_8 is
 begin
